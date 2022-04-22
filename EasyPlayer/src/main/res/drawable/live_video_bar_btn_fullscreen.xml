@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/new_full_click" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/new_full" android:state_enabled="true"></item>
+    <item android:drawable="@drawable/new_full"></item>
+</selector>

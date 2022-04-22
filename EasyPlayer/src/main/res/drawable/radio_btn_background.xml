@@ -1,0 +1,16 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <shape>
+            <solid android:color="@color/color_theme2" />
+            <stroke android:width="1dp" android:color="#81D4FA" />
+            <padding android:bottom="5dp" android:left="10dp" android:right="10dp" android:top="5dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#f2f2f2" />
+            <stroke android:width="1dp" android:color="#ffffff" />
+            <padding android:bottom="5dp" android:left="10dp" android:right="10dp" android:top="5dp" />
+        </shape>
+    </item>
+</selector>

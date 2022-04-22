@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        tools:context="org.easydarwin.easyplayer.activity.PlayListActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@drawable/new_top_bg">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EasyPlayer RTSP"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="12dp"/>
+
+                <ImageButton
+                    android:id="@+id/toolbar_about"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/new_version1"
+                    style="@style/Base.Widget.AppCompat.ActionButton"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/bottom_ll"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f2f2f2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/toolbar_add"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="地址"
+                android:textColor="@drawable/new_color_text"
+                android:textSize="13sp"
+                android:drawableTop="@drawable/new_address_btn"
+                android:paddingTop="8dp"
+                style="@style/Base.Widget.AppCompat.ActionButton"
+                android:layout_gravity="end" />
+
+            <TextView
+                android:id="@+id/toolbar_multi_play"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="分屏"
+                android:textColor="@drawable/new_color_text"
+                android:textSize="13sp"
+                android:drawableTop="@drawable/new_split_btn"
+                android:paddingTop="8dp"
+                android:onClick="onMultiPlay"
+                style="@style/Base.Widget.AppCompat.ActionButton"
+                android:layout_gravity="end" />
+
+            <TextView
+                android:id="@+id/toolbar_setting"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="设置"
+                android:textColor="@drawable/new_color_text"
+                android:textSize="13sp"
+                android:drawableTop="@drawable/new_setting_btn"
+                android:paddingTop="8dp"
+                style="@style/Base.Widget.AppCompat.ActionButton"
+                android:layout_gravity="end" />
+
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/pull_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_above="@id/bottom_ll">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+</layout>

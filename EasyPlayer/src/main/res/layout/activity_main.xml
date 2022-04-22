@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/player_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.PlayActivity"
+        android:background="@color/color_white">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@drawable/new_top_bg">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/toolbar_back"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/new_nav_back"
+                    style="@style/Base.Widget.AppCompat.ActionButton"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"/>
+
+                <ImageButton
+                    android:id="@+id/toolbar_file"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/new_flie"
+                    android:onClick="onOpenFileDirectory"
+                    style="@style/Base.Widget.AppCompat.ActionButton"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"/>
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="播放"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:singleLine="true"
+                    android:layout_toLeftOf="@id/toolbar_file"
+                    android:layout_toRightOf="@id/toolbar_back"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="12dp"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/render_fl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/render_wnd_height">
+
+            <FrameLayout
+                android:id="@+id/render_holder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/render_wnd_height"></FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/live_video_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/live_video_bar_height"
+                android:layout_gravity="bottom"
+                android:background="#f5f5f5"
+                android:divider="?android:attr/listDivider"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:showIn="@layout/activity_main">
+
+                <TextView
+                    android:id="@+id/stream_bps"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0kbps"
+                    android:textSize="13sp"
+                    android:textColor="@color/color_theme2" />
+
+                <ImageButton
+                    android:id="@+id/live_video_bar_enable_audio"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal"
+                    android:onClick="onEnableOrDisablePlayAudio"
+                    android:src="@drawable/live_video_bar_btn_audio" />
+
+                <ImageButton
+                    android:id="@+id/live_video_bar_record"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal"
+                    android:onClick="onRecordOrStop"
+                    android:src="@drawable/live_video_bar_btn_record" />
+
+                <ImageButton
+                    android:id="@+id/live_video_bar_take_picture"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal"
+                    android:onClick="onTakePicture"
+                    android:src="@drawable/live_video_bar_btn_snapshot" />
+
+                <ImageButton
+                    android:id="@+id/enter_fullscreen"
+                    style="@style/Widget.AppCompat.ActionButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="onFullscreen"
+                    android:src="@drawable/live_video_bar_btn_fullscreen"/>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/player_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="?android:attr/listDivider"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:id="@+id/msg_txt"
+                android:scrollbars = "vertical"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

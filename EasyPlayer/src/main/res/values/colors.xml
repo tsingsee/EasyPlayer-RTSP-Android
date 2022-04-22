@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0dbb92</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="color_theme">#00A6FF</color>
+    <color name="color_theme2">#03D1E3</color>
+
+    <color name="color_white">#FFFFFF</color>
+
+    <color name="color_click_text">#03c6e3</color>
+    <color name="color_default_text">#a6a6a6</color>
+
+    <color name="color_green">#2cff1c</color>
+    <color name="color_yellow">#eee604</color>
+    <color name="color_red">#f64a4a</color>
+
+</resources>
